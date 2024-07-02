@@ -1,0 +1,42 @@
+<head>
+    <title>Download stuff ye</title>
+</head>
+
+<body>
+    <div class="main">
+        <br><br> <br><br> <br><br> <br><br> <br><br> <br><br>
+    <input  type="text" class="link" id="links" placeholder="put your fb uhh video yeh"><br><br>
+    <button id="dai" class="link" onclick="dai()" style="        cursor: pointer;">Download</button>
+    <div class="res" id="res"></div>
+</div>
+</body>
+<script>
+  async   function dai(){
+    let link = document.getElementById("links").value;
+    const response = await fetch(`https://jc-blakman-rel.oki2.repl.co/api/v2/fb-download_vid?url=${link}`);
+  const main = await response.json().catch((e) => { console.log(e)})
+     document.getElementById('res').innerHTML = `
+    <img src='${main.data.vid.thumbnail}' width='300' >
+    <p>Name:<br> ${main.data.vid.author.name}</p>
+    <a href ='${main.data.download.mp4}'>Download video<a><br>
+        <a href ='${main.data.download.mp3}'>Download mp3<a><br>
+            <a href ='${main.data.download.mp4Hd}'>Download mp4 HD<a><br>
+    `
+    }
+</script>
+<style>
+    body{
+        background-color: #111;
+        color: #fff;
+        font-family: 'Roboto',sans-serif;
+    }
+    .main{
+        align-items: center;
+        text-align: center;
+    
+    }
+    .link{
+        font-size: 30px;
+            border-radius: 5px;
+    }
+</style>

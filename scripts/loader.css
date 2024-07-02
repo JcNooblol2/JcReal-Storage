@@ -1,0 +1,27 @@
+/*loader v1 /adjustments(soon)*/
+.card{transform: translateX(100px);opacity: 0;transition: 150ms;}
+.showv1{transform: translate(0);opacity: 1;}
+/*loader v2 */
+.hiddenv2{
+    opacity: 0;
+    transition: all 2s;
+    filter: blur(-10px);
+    transform: translateY(-100%);
+}
+.showv2{
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+}
+.hiddenv2A2{
+    opacity: 0;
+    transition: all 2s;
+    filter: blur(-10px);
+    transform: translateZ(-100%);
+}
+.showv2A2{
+    opacity: 1;
+    filter: blur(0);
+    transform: translateZ(0);
+}
+
