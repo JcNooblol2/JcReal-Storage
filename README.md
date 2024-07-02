@@ -5,8 +5,7 @@
 <br><br>
 <b>Does it allow any files?</b>
 <p>Yes but uhm yeah thers a folder called public assets</p>
-
-<br><br>
+<br>
 <b>Can i upload a movie on the files?</b>
 <p>Nope github has a limit on file like 100mb i thin the minimum on github site  is 50mb so yeah</p>
 
