@@ -11,9 +11,79 @@
 
 <h3>How can i find my file?</h3>
 
-<p>o ye crap ima work the form tomorow cause am tired real</p>
+<p>o ye crap ima work dis text soon so yeah</p>
 
 <h3>how do i know if my file is uploaded</h3>
 <p>so uhm to know it uh a bot will text you and send the file link so yeah</p>
 
-<b>oke bai ima slep</b>
+<h3>are you going to manualy to make like the folder to uh list the files?</h3>
+
+<p>yes but the sample like: yourname/yourfolder/index.html but the index.html is yours but ima give you the code: </p>
+ 
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Directory: /yourfoldername (you can edit this real) </title>
+</head>
+<body>
+
+    <h1>Directory: /upload</h1>
+    <a href="/">🏠</a> 
+    <input type="text" id="searchInput" placeholder="Type to search">
+    <ul id="fileList"></ul>
+
+    <script>
+         //cool
+        fetch('https://api.github.com/repos/Jcnob/jcnoob.github.io/contents/yourfoldername?ref=main')
+            .then(response => response.json())
+            .then(data => {
+                const fileList = document.getElementById('fileList');
+                const searchInput = document.getElementById('searchInput');
+                const filterFiles = () => {
+                    const searchTerm = searchInput.value.toLowerCase();
+
+                    fileList.innerHTML = ''; // Clear the previous list
+
+                    data.forEach(item => {
+                        const itemName = item.name.toLowerCase();
+
+                        if (item.type === 'file' && itemName.includes(searchTerm)) {
+                            const listItem = document.createElement('div');
+                            const link = document.createElement('a');
+                            link.href = `https://files.jcmainclr.xyz/yourfoldername/${item.name}`;
+                            link.textContent = item.name;
+                            listItem.appendChild(link);
+                            fileList.appendChild(listItem);
+                        } else if (item.type === 'dir' && itemName.includes(searchTerm)) {
+                            const listItem = document.createElement('div');
+                            const link = document.createElement('a');
+                            link.href = `https://files.jcmainclr.xyz/yourfoldername/${item.name}`;
+                            link.textContent = item.name + '/';
+                            listItem.appendChild(link);
+                            fileList.appendChild(listItem);
+                        }
+
+                    });
+                };
+                filterFiles();
+                searchInput.addEventListener('input', filterFiles);
+            })
+            .catch(error => console.error('Error fetching file list:', error));
+    </script>
+</body>
+</html>
+<style>
+    body{
+        background-color: #2E3440;
+        color: #fff;
+        font-family: 'Roboto',sans-serif;
+    }
+    .neger{color: #fff;  background-color: #2E3440;  border: 3px solid #fff; font-size: 30px;}
+</style>
+```
+<b> but if you want a add background you cant also customize it yea<b> 
+
+<h1> Last Update July 7 2024 </h1>
