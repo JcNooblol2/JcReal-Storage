@@ -1,5 +1,5 @@
 <h1>Hello people so uhm since my files is public ima make a form to upload your real files so yeah</h1>
-<a href="#">Form to upload your real files.</a>
+<a href="https://github.com/JcNooblol2/JcReal-Storage/issues"  target="_blank">Submit a issue to upload your real file.</a>
 
 <h1>A trash Question:</h1>
 <br><br>
