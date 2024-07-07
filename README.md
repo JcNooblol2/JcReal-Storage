@@ -11,10 +11,10 @@
 
 <h3>How can i find my file?</h3>
 
-<p>o ye crap ima work dis text soon so yeah</p>
+<p>on the issue you make on github the mod or the owner of the site will give you the link of your cool file so yeah</p>
 
 <h3>how do i know if my file is uploaded</h3>
-<p>so uhm to know it uh a bot will text you and send the file link so yeah</p>
+<p>so uhm to know it will says solved so the file has been uploaded on the github repo so yeah</p>
 
 <h3>are you going to manualy to make like the folder to uh list the files?</h3>
 
