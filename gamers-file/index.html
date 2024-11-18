@@ -32,14 +32,14 @@
                         if (item.type === 'file' && itemName.includes(searchTerm)) {
                             const listItem = document.createElement('div');
                             const link = document.createElement('a');
-                            link.href = `https://files.jcmainclr.xyz/gamers-file/${item.name}`;
+                            link.href = `https://files.jcmainclr.lol/gamers-file/${item.name}`;
                             link.textContent = item.name;
                             listItem.appendChild(link);
                             fileList.appendChild(listItem);
                         } else if (item.type === 'dir' && itemName.includes(searchTerm)) {
                             const listItem = document.createElement('div');
                             const link = document.createElement('a');
-                            link.href = `https://files.jcmainclr.xyz/gamers-file/${item.name}`;
+                            link.href = `https://files.jcmainclr.lol/gamers-file/${item.name}`;
                             link.textContent = item.name + '/';
                             listItem.appendChild(link);
                             fileList.appendChild(listItem);
