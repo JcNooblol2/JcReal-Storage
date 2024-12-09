@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Directory: /lyrics </title>
+</head>
+<body>
+
+    <h1>Directory: /scripts</h1>
+    <a href="/">🏠</a> 
+    <input type="text" id="searchInput" placeholder="Type to search">
+    <ul id="fileList"></ul>
+
+    <script>
+        // Fetch the file list from GitHub API
+        fetch('https://api.github.com/repos/JcNooblol2/stuff/contents/scripts?ref=main')
+            .then(response => response.json())
+            .then(data => {
+                const fileList = document.getElementById('fileList');
+                const searchInput = document.getElementById('searchInput');
+
+                // Function to filter files based on user input
+                const filterFiles = () => {
+                    const searchTerm = searchInput.value.toLowerCase();
+
+                    fileList.innerHTML = ''; // Clear the previous list
+
+                    data.forEach(item => {
+                        const itemName = item.name.toLowerCase();
+
+                        if (item.type === 'file' && itemName.includes(searchTerm)) {
+                            const listItem = document.createElement('div');
+                            const link = document.createElement('a');
+                            link.href = `https://files.jcmainclr.lol/lyrics/${item.name}`;
+                            link.textContent = item.name;
+                            listItem.appendChild(link);
+                            fileList.appendChild(listItem);
+                        } else if (item.type === 'dir' && itemName.includes(searchTerm)) {
+                            const listItem = document.createElement('div');
+                            const link = document.createElement('a');
+                            link.href = `https://files.jcmainclr.lol/lyrics/${item.name}`;
+                            link.textContent = item.name + '/';
+                            listItem.appendChild(link);
+                            fileList.appendChild(listItem);
+                        }
+
+                    });
+                };
+                filterFiles();
+                searchInput.addEventListener('input', filterFiles);
+            })
+            .catch(error => console.error('Error fetching file list:', error));
+    </script>
+</body>
+</html>
+<style>
+    body{
+        background-color: #2E3440;
+        color: #fff;
+        font-family: 'Roboto',sans-serif;
+    }
+    a{color: #fff;  }
+</style>
