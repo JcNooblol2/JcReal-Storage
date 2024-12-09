@@ -7,14 +7,15 @@
 </head>
 <body>
 
-    <h1>Directory: /scripts</h1>
+    <h1>Directory: /lyrics</h1>
+    <p>well a random stuff shit on ma mind (ima make a api here soon using json ima rip off github storage ye bai) </p>
     <a href="/">🏠</a> 
     <input type="text" id="searchInput" placeholder="Type to search">
     <ul id="fileList"></ul>
 
     <script>
         // Fetch the file list from GitHub API
-        fetch('https://api.github.com/repos/JcNooblol2/stuff/contents/scripts?ref=main')
+        fetch('https://api.github.com/repos/JcNooblol2/stuff/contents/lyrics?ref=main')
             .then(response => response.json())
             .then(data => {
                 const fileList = document.getElementById('fileList');
